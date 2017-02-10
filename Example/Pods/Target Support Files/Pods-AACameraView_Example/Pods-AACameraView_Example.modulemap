@@ -1,0 +1,6 @@
+framework module Pods_AACameraView_Example {
+  umbrella header "Pods-AACameraView_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

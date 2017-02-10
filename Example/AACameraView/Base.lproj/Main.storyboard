@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="LtE-0C-tdA">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--AACameraView-->
+        <scene sceneID="trd-SX-FZ0">
+            <objects>
+                <viewController id="km8-ns-83S" customClass="ViewController" customModule="AACameraView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qgY-EC-blj"/>
+                        <viewControllerLayoutGuide type="bottom" id="EAN-ma-Ax2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tgx-92-Vb4">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qC4-V5-939">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="j7G-yL-gnk">
+                                        <color key="tintColor" red="0.22824245360000001" green="0.57103263420000006" blue="0.57090733640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="toggleCamera:" destination="km8-ns-83S" id="RLe-8a-dpD"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xlo-co-0KJ">
+                                        <color key="tintColor" red="0.22824245360000001" green="0.57103263420000006" blue="0.57090733640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem image="Flash" id="v3w-6v-67W">
+                                        <color key="tintColor" red="0.22745098039215686" green="0.5725490196078431" blue="0.5725490196078431" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="toggleFlash:" destination="km8-ns-83S" id="8Oc-Dt-CEc"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2R1-V0-EEt">
+                                        <color key="tintColor" red="0.22824245360000001" green="0.57103263420000006" blue="0.57090733640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem image="Capture" id="aEl-3b-p8K">
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="captureAction:" destination="km8-ns-83S" id="DaH-co-gB9"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="qUx-su-mFW">
+                                        <color key="tintColor" red="0.22824245360000001" green="0.57103263420000006" blue="0.57090733640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem image="Flip" id="ilB-Mt-tKG">
+                                        <color key="tintColor" red="0.22824245360000001" green="0.57103263420000006" blue="0.57090733640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="flipCamera:" destination="km8-ns-83S" id="5vH-AC-Syj"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="6Xh-9c-QY6">
+                                        <color key="tintColor" red="0.22824245360000001" green="0.57103263420000006" blue="0.57090733640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="action" id="5Y7-E7-XOw">
+                                        <color key="tintColor" red="0.22824245360000001" green="0.57103263420000006" blue="0.57090733640000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="askForCameraPermissions:" destination="km8-ns-83S" id="otX-1S-bXd"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fap-Ti-kWh" customClass="AACameraView" customModule="AACameraView">
+                                <rect key="frame" x="0.0" y="64" width="320" height="460"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.35098725559999999" green="0.51719743009999997" blue="0.57188922170000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fap-Ti-kWh" firstAttribute="top" secondItem="qgY-EC-blj" secondAttribute="bottom" id="MPz-rP-70U"/>
+                            <constraint firstItem="fap-Ti-kWh" firstAttribute="leading" secondItem="qC4-V5-939" secondAttribute="leading" id="Pbf-az-P66"/>
+                            <constraint firstItem="qC4-V5-939" firstAttribute="bottom" secondItem="EAN-ma-Ax2" secondAttribute="top" id="RFe-3q-Sf8"/>
+                            <constraint firstItem="fap-Ti-kWh" firstAttribute="trailing" secondItem="qC4-V5-939" secondAttribute="trailing" id="XKy-gJ-BKX"/>
+                            <constraint firstAttribute="trailing" secondItem="fap-Ti-kWh" secondAttribute="trailing" id="hG2-69-kFB"/>
+                            <constraint firstItem="fap-Ti-kWh" firstAttribute="leading" secondItem="tgx-92-Vb4" secondAttribute="leading" id="qfH-mE-AqC"/>
+                            <constraint firstItem="qC4-V5-939" firstAttribute="top" secondItem="fap-Ti-kWh" secondAttribute="bottom" id="sOq-7e-YUM"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="AACameraView" id="QhB-j2-Ofo"/>
+                    <connections>
+                        <outlet property="cameraView" destination="fap-Ti-kWh" id="JEc-pi-Con"/>
+                        <outlet property="captureButton" destination="aEl-3b-p8K" id="IQD-og-JB3"/>
+                        <outlet property="flashButton" destination="v3w-6v-67W" id="Qp8-1L-vZ9"/>
+                        <outlet property="flipButton" destination="ilB-Mt-tKG" id="4d1-Jh-CwC"/>
+                        <outlet property="modeButton" destination="j7G-yL-gnk" id="opT-YF-BYu"/>
+                        <outlet property="permissionButton" destination="5Y7-E7-XOw" id="XPt-IZ-SEB"/>
+                        <segue destination="gE2-ed-tHI" kind="show" identifier="demoVideo" id="91N-4Z-Pzg"/>
+                        <segue destination="d6t-Wy-jo2" kind="show" identifier="demoImage" id="98E-JH-zdh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QDY-Oh-lVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="920.625" y="139.43661971830986"/>
+        </scene>
+        <!--Demo Image View-->
+        <scene sceneID="rHl-uW-Jum">
+            <objects>
+                <viewController storyboardIdentifier="DemoImageView" id="d6t-Wy-jo2" customClass="DemoImageView" customModule="AACameraView_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Cnd-sZ-QDI"/>
+                        <viewControllerLayoutGuide type="bottom" id="f2I-vT-b4Y"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="haw-jX-7Ru">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5jd-gr-UOP">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5jd-gr-UOP" firstAttribute="bottom" secondItem="f2I-vT-b4Y" secondAttribute="top" id="Vdt-ci-G6n"/>
+                            <constraint firstItem="5jd-gr-UOP" firstAttribute="top" secondItem="Cnd-sZ-QDI" secondAttribute="bottom" id="Yg3-Fr-h7P"/>
+                            <constraint firstAttribute="trailing" secondItem="5jd-gr-UOP" secondAttribute="trailing" id="kre-qt-BcX"/>
+                            <constraint firstItem="5jd-gr-UOP" firstAttribute="leading" secondItem="haw-jX-7Ru" secondAttribute="leading" id="sMa-ih-frJ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="5jd-gr-UOP" id="fl9-1c-5HJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aoS-CT-XtN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1815" y="989"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="S2q-Hw-79R">
+            <objects>
+                <avPlayerViewController storyboardIdentifier="DemoVideoPlayer" videoGravity="AVLayerVideoGravityResizeAspect" id="gE2-ed-tHI" customClass="DemoVideoPlayer" customModule="AACameraView_Example" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Yd-nh-qdN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="81" y="989"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wHq-5d-egj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LtE-0C-tdA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aef-2E-RpF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="km8-ns-83S" kind="relationship" relationship="rootViewController" id="DRj-5M-UMn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="djm-Uj-ZH5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="921" y="-643"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Capture" width="30" height="30"/>
+        <image name="Flash" width="18" height="27"/>
+        <image name="Flip" width="28" height="28"/>
+    </resources>
+</document>

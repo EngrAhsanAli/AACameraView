@@ -1,0 +1,6 @@
+framework module AACameraView {
+  umbrella header "AACameraView-umbrella.h"
+
+  export *
+  module * { export * }
+}

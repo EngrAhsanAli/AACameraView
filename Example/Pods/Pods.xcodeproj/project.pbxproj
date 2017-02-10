@@ -1,0 +1,568 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A52F2679F277F8FE4BD1F4F34681263 /* AACameraView-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E79FAF559A544EAC2EE7B70D42C328C5 /* AACameraView-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2523BF53340866595D9D8EF669811D1A /* AACameraView-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 23D1DE1CBC11CD2209B7550691A92C80 /* AACameraView-dummy.m */; };
+		332F4CE29C217507BF3DFAA31F175F03 /* Pods-AACameraView_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ADF710D6B186D6F4F7B7D0DB95E039A4 /* Pods-AACameraView_Example-dummy.m */; };
+		42944C261E4CBF5A007305BF /* AACameraView+Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42944C251E4CBF5A007305BF /* AACameraView+Global.swift */; };
+		42B29F321E4A17AB00801966 /* AACameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B29F311E4A17AB00801966 /* AACameraView.swift */; };
+		42B29F351E4A1FA800801966 /* AACameraView+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B29F341E4A1FA800801966 /* AACameraView+Helper.swift */; };
+		60DBECAEE7F609E7A6A923630D914187 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		7B36D1E039D46C0F598CBC738C1A5043 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
+		BFB40960173FF579DF9BB806F289515A /* Pods-AACameraView_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2801A49152C453A63B160335A53E788E /* Pods-AACameraView_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8DF4F9097B605A2BE9F0E0B1AFA58D3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 94FD50101C99886A2564D61EDE0E3CB7;
+			remoteInfo = AACameraView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		14BF3A04F970B6C1D8CF14FECF1FB9FC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		166859925EB3A10498EF931E75D37B48 /* Pods-AACameraView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AACameraView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		23D1DE1CBC11CD2209B7550691A92C80 /* AACameraView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AACameraView-dummy.m"; sourceTree = "<group>"; };
+		2801A49152C453A63B160335A53E788E /* Pods-AACameraView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AACameraView_Example-umbrella.h"; sourceTree = "<group>"; };
+		42944C251E4CBF5A007305BF /* AACameraView+Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AACameraView+Global.swift"; sourceTree = "<group>"; };
+		42B29F311E4A17AB00801966 /* AACameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AACameraView.swift; sourceTree = "<group>"; };
+		42B29F341E4A1FA800801966 /* AACameraView+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AACameraView+Helper.swift"; sourceTree = "<group>"; };
+		4D4BDE532FD3DDE2B9F04511A798905C /* AACameraView.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AACameraView.xcconfig; sourceTree = "<group>"; };
+		576CE03B9C947D1B7837D5BE0C246AE7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A05A21A722B3A810EC546438418EC97 /* Pods-AACameraView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AACameraView_Example-frameworks.sh"; sourceTree = "<group>"; };
+		7B30774491A7928E1EA34C00C620ACDD /* AACameraView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AACameraView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A716ED4839B8F42CECCC01F50C66C4A6 /* Pods-AACameraView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-AACameraView_Example.modulemap"; sourceTree = "<group>"; };
+		ADF710D6B186D6F4F7B7D0DB95E039A4 /* Pods-AACameraView_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AACameraView_Example-dummy.m"; sourceTree = "<group>"; };
+		B244B839820DA5834173FCA7BB13B824 /* Pods_AACameraView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AACameraView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA4C76B7482184A599B680D5C72FF264 /* AACameraView.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AACameraView.modulemap; sourceTree = "<group>"; };
+		CB615891EB3E2F8E7CA4BDD72B9C7FB8 /* Pods-AACameraView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AACameraView_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D40B0FDFB5B4B23A860D76F9E43E753D /* Pods-AACameraView_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AACameraView_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E79FAF559A544EAC2EE7B70D42C328C5 /* AACameraView-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AACameraView-umbrella.h"; sourceTree = "<group>"; };
+		E7AD573782D35E023B0C4B53D004AF08 /* Pods-AACameraView_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AACameraView_Example-resources.sh"; sourceTree = "<group>"; };
+		E92047C7A5FDD24EDA579527490C9A06 /* Pods-AACameraView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AACameraView_Example.release.xcconfig"; sourceTree = "<group>"; };
+		EF0318EFA520F6C0D993F86152D8B586 /* AACameraView-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AACameraView-prefix.pch"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2191A44A6705F9FFC1B08F134C849926 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60DBECAEE7F609E7A6A923630D914187 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D350CFC818945B187AC2EB81D16FA4D9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7B36D1E039D46C0F598CBC738C1A5043 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00A4723EE49DE3AF1E8ECA36A00C6EA9 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F9CF640A0DB108DC93D61DF5CDD816F4 /* AACameraView */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		3BC6CB755B998F58850249F033A07BA4 /* Pods-AACameraView_Example */ = {
+			isa = PBXGroup;
+			children = (
+				576CE03B9C947D1B7837D5BE0C246AE7 /* Info.plist */,
+				A716ED4839B8F42CECCC01F50C66C4A6 /* Pods-AACameraView_Example.modulemap */,
+				D40B0FDFB5B4B23A860D76F9E43E753D /* Pods-AACameraView_Example-acknowledgements.markdown */,
+				166859925EB3A10498EF931E75D37B48 /* Pods-AACameraView_Example-acknowledgements.plist */,
+				ADF710D6B186D6F4F7B7D0DB95E039A4 /* Pods-AACameraView_Example-dummy.m */,
+				7A05A21A722B3A810EC546438418EC97 /* Pods-AACameraView_Example-frameworks.sh */,
+				E7AD573782D35E023B0C4B53D004AF08 /* Pods-AACameraView_Example-resources.sh */,
+				2801A49152C453A63B160335A53E788E /* Pods-AACameraView_Example-umbrella.h */,
+				CB615891EB3E2F8E7CA4BDD72B9C7FB8 /* Pods-AACameraView_Example.debug.xcconfig */,
+				E92047C7A5FDD24EDA579527490C9A06 /* Pods-AACameraView_Example.release.xcconfig */,
+			);
+			name = "Pods-AACameraView_Example";
+			path = "Target Support Files/Pods-AACameraView_Example";
+			sourceTree = "<group>";
+		};
+		476516A226BAEC2B892A514E7E0366C0 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3BC6CB755B998F58850249F033A07BA4 /* Pods-AACameraView_Example */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		4D1F3EC9D773D24C013992FFFB823AD7 /* AACameraView */ = {
+			isa = PBXGroup;
+			children = (
+				7F014F70D9CD8930A0B2CFB43D48B6FC /* Classes */,
+			);
+			path = AACameraView;
+			sourceTree = "<group>";
+		};
+		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				00A4723EE49DE3AF1E8ECA36A00C6EA9 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				B4BD06B19B886553ECBBB9F459D8BC30 /* Products */,
+				476516A226BAEC2B892A514E7E0366C0 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		7F014F70D9CD8930A0B2CFB43D48B6FC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				42B29F311E4A17AB00801966 /* AACameraView.swift */,
+				42B29F341E4A1FA800801966 /* AACameraView+Helper.swift */,
+				42944C251E4CBF5A007305BF /* AACameraView+Global.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		841957C8278A889D0708656787DE9BF7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				BA4C76B7482184A599B680D5C72FF264 /* AACameraView.modulemap */,
+				4D4BDE532FD3DDE2B9F04511A798905C /* AACameraView.xcconfig */,
+				23D1DE1CBC11CD2209B7550691A92C80 /* AACameraView-dummy.m */,
+				EF0318EFA520F6C0D993F86152D8B586 /* AACameraView-prefix.pch */,
+				E79FAF559A544EAC2EE7B70D42C328C5 /* AACameraView-umbrella.h */,
+				14BF3A04F970B6C1D8CF14FECF1FB9FC /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/AACameraView";
+			sourceTree = "<group>";
+		};
+		B4BD06B19B886553ECBBB9F459D8BC30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7B30774491A7928E1EA34C00C620ACDD /* AACameraView.framework */,
+				B244B839820DA5834173FCA7BB13B824 /* Pods_AACameraView_Example.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9CF640A0DB108DC93D61DF5CDD816F4 /* AACameraView */ = {
+			isa = PBXGroup;
+			children = (
+				4D1F3EC9D773D24C013992FFFB823AD7 /* AACameraView */,
+				841957C8278A889D0708656787DE9BF7 /* Support Files */,
+			);
+			name = AACameraView;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		595C278E261E69329DBF7BB67B2C918C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFB40960173FF579DF9BB806F289515A /* Pods-AACameraView_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		59F63A22A44E28D67C358325B85669CB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A52F2679F277F8FE4BD1F4F34681263 /* AACameraView-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4F05DE293375246BE9AB0599B253C9E1 /* Pods-AACameraView_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F5BBC80E8A747376A4142D5FA58285C /* Build configuration list for PBXNativeTarget "Pods-AACameraView_Example" */;
+			buildPhases = (
+				ADE9DF6FBA1D59254562A8AAE5180DEA /* Sources */,
+				D350CFC818945B187AC2EB81D16FA4D9 /* Frameworks */,
+				595C278E261E69329DBF7BB67B2C918C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C2DBB61562208B4FCAD5A6B524F8FD9E /* PBXTargetDependency */,
+			);
+			name = "Pods-AACameraView_Example";
+			productName = "Pods-AACameraView_Example";
+			productReference = B244B839820DA5834173FCA7BB13B824 /* Pods_AACameraView_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		94FD50101C99886A2564D61EDE0E3CB7 /* AACameraView */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F213ACA9D9CD0D24E5A438D4DB6EF0E3 /* Build configuration list for PBXNativeTarget "AACameraView" */;
+			buildPhases = (
+				265F15D7C80717BC949CA53E9B0EDFC6 /* Sources */,
+				2191A44A6705F9FFC1B08F134C849926 /* Frameworks */,
+				59F63A22A44E28D67C358325B85669CB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AACameraView;
+			productName = AACameraView;
+			productReference = 7B30774491A7928E1EA34C00C620ACDD /* AACameraView.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					4F05DE293375246BE9AB0599B253C9E1 = {
+						LastSwiftMigration = 0820;
+					};
+					94FD50101C99886A2564D61EDE0E3CB7 = {
+						LastSwiftMigration = 0820;
+					};
+				};
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = B4BD06B19B886553ECBBB9F459D8BC30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				94FD50101C99886A2564D61EDE0E3CB7 /* AACameraView */,
+				4F05DE293375246BE9AB0599B253C9E1 /* Pods-AACameraView_Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		265F15D7C80717BC949CA53E9B0EDFC6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42B29F351E4A1FA800801966 /* AACameraView+Helper.swift in Sources */,
+				42944C261E4CBF5A007305BF /* AACameraView+Global.swift in Sources */,
+				2523BF53340866595D9D8EF669811D1A /* AACameraView-dummy.m in Sources */,
+				42B29F321E4A17AB00801966 /* AACameraView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADE9DF6FBA1D59254562A8AAE5180DEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				332F4CE29C217507BF3DFAA31F175F03 /* Pods-AACameraView_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C2DBB61562208B4FCAD5A6B524F8FD9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = AACameraView;
+			target = 94FD50101C99886A2564D61EDE0E3CB7 /* AACameraView */;
+			targetProxy = 8DF4F9097B605A2BE9F0E0B1AFA58D3E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		28A0D183C63D4F2F6C53F7D1A4D84364 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D4BDE532FD3DDE2B9F04511A798905C /* AACameraView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AACameraView/AACameraView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AACameraView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AACameraView/AACameraView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AACameraView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8DED8AD26D381A6ACFF202E5217EC498 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9E1E4E48AF2EAB23169E611BF694090A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		C1209C4A005178D41992F52ED33640AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB615891EB3E2F8E7CA4BDD72B9C7FB8 /* Pods-AACameraView_Example.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AACameraView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AACameraView_Example/Pods-AACameraView_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AACameraView_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C1E9DAB1FF9161AC62A886B5917E80CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E92047C7A5FDD24EDA579527490C9A06 /* Pods-AACameraView_Example.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-AACameraView_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-AACameraView_Example/Pods-AACameraView_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_AACameraView_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FA7E8C44A474879494F695555CEACA5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D4BDE532FD3DDE2B9F04511A798905C /* AACameraView.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AACameraView/AACameraView-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AACameraView/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AACameraView/AACameraView.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AACameraView;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E1E4E48AF2EAB23169E611BF694090A /* Debug */,
+				8DED8AD26D381A6ACFF202E5217EC498 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F5BBC80E8A747376A4142D5FA58285C /* Build configuration list for PBXNativeTarget "Pods-AACameraView_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C1209C4A005178D41992F52ED33640AD /* Debug */,
+				C1E9DAB1FF9161AC62A886B5917E80CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F213ACA9D9CD0D24E5A438D4DB6EF0E3 /* Build configuration list for PBXNativeTarget "AACameraView" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				28A0D183C63D4F2F6C53F7D1A4D84364 /* Debug */,
+				FA7E8C44A474879494F695555CEACA5C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
