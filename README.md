@@ -97,7 +97,7 @@ $ brew install carthage
 Then add the following line to your Cartfile:
 
 ```
-github "EngrAhsanAli/AACameraView" 
+github "EngrAhsanAli/AACameraView" "master"
 ```
 
 Then import the library in all files where you use it:
