@@ -101,7 +101,7 @@ github "EngrAhsanAli/AACameraView" "master"
 ```
 
 Then import the library in all files where you use it:
-```ruby
+```swift
 import AACameraView
 ```
 
@@ -142,7 +142,7 @@ Make sure the module property is also set to  `AACameraView`.
 Here's the basic usage and declaration of `AACameraView`.
 
 **Usage**:
-```
+```swift
 // IBOutlet for AACameraView
 @IBOutlet weak var cameraView: AACameraView!
 
