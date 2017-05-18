@@ -198,20 +198,33 @@ import AVFoundation
             output.captureStillImageAsynchronously(from: connection, completionHandler: { [unowned self] response, error in
                 
                 guard
-                    error == nil,
-                    
-                    let data = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(response),
-                    
-                    let image = UIImage(data: data)
-                    
-                    else {
-                        self.response?(error)
-                        return
-                }
+                error == nil,
                 
-                self.response?(image)
+                let data = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(response),
                 
-            })
+                let image = UIImage(data: data)
+                
+                
+                else {
+                    self.response?(error)
+                    return
+            }
+            
+            
+            let outputRect = self.previewLayer?.metadataOutputRectOfInterest(for: (self.previewLayer?.bounds)!)
+            var cgImage = image.cgImage!
+            let width = CGFloat(cgImage.width)
+            let height = CGFloat(cgImage.height)
+            let cropRect = CGRect(x: (outputRect?.origin.x)! * width, y: (outputRect?.origin.y)! * height, width: (outputRect?.size.width)! * width, height: (outputRect?.size.height)! * height)
+            
+            cgImage = cgImage.cropping(to: cropRect)!
+            let croppedUIImage = UIImage(cgImage: cgImage, scale: 1.0, orientation: image.imageOrientation)
+            
+            
+              self.response?(croppedUIImage)
+            
+        })
+
         })
     }
 }
