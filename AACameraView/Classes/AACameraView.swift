@@ -61,7 +61,7 @@ import AVFoundation
             setSession()
         }
     }
-
+    
     /// Current output for capture session
     var output: AVCaptureOutput = AVCaptureStillImageOutput() {
         didSet {
@@ -108,7 +108,7 @@ import AVFoundation
     }
     
     /// Current camera position for AACameraView
-    open var cameraPosition: AVCaptureDevicePosition = .back {
+    open var cameraPosition: AVCaptureDevice.Position = .back {
         didSet {
             guard cameraPosition != oldValue else {
                 return
@@ -118,7 +118,7 @@ import AVFoundation
     }
     
     /// Current flash mode for AACameraView
-    open var flashMode: AVCaptureFlashMode = .auto {
+    open var flashMode: AVCaptureDevice.FlashMode = AVCaptureDevice.FlashMode.auto {
         didSet {
             guard flashMode != oldValue else {
                 return
@@ -167,7 +167,7 @@ import AVFoundation
             session.stopRunning()
         }
     }
-
+    
     /// Start Video Recording for AACameraView
     open func startVideoRecording() {
         guard
@@ -175,7 +175,7 @@ import AVFoundation
             !output.isRecording
             else { return }
         
-        output.startRecording(toOutputFileURL: global.tempMoviePath, recordingDelegate: self)
+        output.startRecording(to: global.tempMoviePath, recordingDelegate: self)
     }
     
     /// Stop Video Recording for AACameraView
@@ -184,7 +184,7 @@ import AVFoundation
             let output = outputVideo,
             output.isRecording
             else { return }
-
+        
         output.stopRecording()
         
     }
@@ -194,13 +194,13 @@ import AVFoundation
         guard let output = outputImage else { return }
         
         global.queue.async(execute: {
-            let connection = output.connection(withMediaType: AVMediaTypeVideo)
-            output.captureStillImageAsynchronously(from: connection, completionHandler: { [unowned self] response, error in
+            let connection = output.connection(with: AVMediaType.video)
+            output.captureStillImageAsynchronously(from: connection!, completionHandler: { [unowned self] response, error in
                 
                 guard
                     error == nil,
                     
-                    let data = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(response),
+                    let data = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(response!),
                     
                     let image = UIImage(data: data)
                     
@@ -223,7 +223,7 @@ extension AACameraView {
     /// Zoom in/out selector if allowd
     ///
     /// - Parameter gesture: UIPinchGestureRecognizer
-    func pinchToZoom(_ gesture: UIPinchGestureRecognizer) {
+    @objc func pinchToZoom(_ gesture: UIPinchGestureRecognizer) {
         guard let device = currentDevice else {
             return
         }
@@ -233,7 +233,7 @@ extension AACameraView {
     /// Focus selector if allowd
     ///
     /// - Parameter gesture: UITapGestureRecognizer
-    func tapToFocus(_ gesture: UITapGestureRecognizer) {
+    @objc func tapToFocus(_ gesture: UITapGestureRecognizer) {
         guard
             let previewLayer = previewLayer,
             let device = currentDevice
@@ -246,7 +246,11 @@ extension AACameraView {
 
 // MARK: - AVCaptureFileOutputRecordingDelegate
 extension AACameraView: AVCaptureFileOutputRecordingDelegate {
-
+    public func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
+        // TODO:- On finish implementation
+    }
+    
+    
     /// Recording did start
     ///
     /// - Parameters:
@@ -290,7 +294,7 @@ extension AACameraView {
         
         global.queue.async(execute: {
             session.beginConfiguration()
-            session.sessionPreset = AVCaptureSessionPresetHigh
+            session.sessionPreset = AVCaptureSession.Preset.high
             
             self.setDevice()
             self.setOutputMode()
@@ -348,3 +352,4 @@ extension AACameraView {
     
     
 }
+

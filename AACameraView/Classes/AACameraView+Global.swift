@@ -13,9 +13,9 @@ class AACameraViewGlobal {
     
     let queue = DispatchQueue(label: "AACameraViewSessionQueue", attributes: [])
     
-    let devicesVideo = AVCaptureDevice.devices(withMediaType: AVMediaTypeVideo) as! [AVCaptureDevice]
+    let devicesVideo = AVCaptureDevice.devices(for: AVMediaType.video)
     
-    let deviceAudio = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeAudio)
+    let deviceAudio = AVCaptureDevice.default(for: AVMediaType.audio)
     
     lazy var cameraFront: AVCaptureDevice? = {
         return self.devicesVideo.filter{$0.position == .front}.first
@@ -29,10 +29,10 @@ class AACameraViewGlobal {
     let status: AVAuthorizationStatus = {
         guard
             UIImagePickerController.isCameraDeviceAvailable(.rear) ||
-            UIImagePickerController.isCameraDeviceAvailable(.front)
+                UIImagePickerController.isCameraDeviceAvailable(.front)
             else { fatalError("AACameraView - No camera device found") }
         
-        return AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo)
+        return AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
     }()
     
     lazy var tempMoviePath: URL = {

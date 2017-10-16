@@ -34,14 +34,14 @@ extension AVCaptureSession {
     ///   - mode: OUTPUT_MODE
     func setQuality(_ quality: OUTPUT_QUALITY, mode: OUTPUT_MODE) {
         
-        var sessionPreset = AVCaptureSessionPresetLow
+        var sessionPreset = AVCaptureSession.Preset.low
         switch quality {
         case .low:
-            sessionPreset = AVCaptureSessionPresetLow
+            sessionPreset = AVCaptureSession.Preset.low
         case .medium:
-            sessionPreset = AVCaptureSessionPresetMedium
+            sessionPreset = AVCaptureSession.Preset.medium
         case .high:
-            sessionPreset = mode == .image ? AVCaptureSessionPresetPhoto : AVCaptureSessionPresetHigh
+            sessionPreset = mode == .image ? AVCaptureSession.Preset.photo : AVCaptureSession.Preset.high
             
         }
         if self.canSetSessionPreset(sessionPreset) {
@@ -55,7 +55,7 @@ extension AVCaptureSession {
     ///
     /// - Parameter output: AVCaptureOutput
     func setOutput(_ output: AVCaptureOutput) {
-
+        
         if canAddOutput(output) {
             beginConfiguration()
             addOutput(output)
@@ -69,7 +69,7 @@ extension AVCaptureSession {
     /// - Parameters:
     ///   - devices: [AVCaptureDevice]
     ///   - flashMode: AVCaptureFlashMode
-    func setFlashMode(_ devices: [AVCaptureDevice], flashMode: AVCaptureFlashMode) {
+    func setFlashMode(_ devices: [AVCaptureDevice], flashMode: AVCaptureDevice.FlashMode) {
         self.beginConfiguration()
         devices.forEach { (device) in
             if (device.position == .back) {
@@ -93,9 +93,9 @@ extension AVCaptureSession {
     ///   - position: camera position
     ///   - cameraBack: front camera
     ///   - cameraFront: back camera
-    func setCameraDevice(_ position: AVCaptureDevicePosition, cameraBack: AVCaptureDevice?, cameraFront: AVCaptureDevice?) {
+    func setCameraDevice(_ position: AVCaptureDevice.Position, cameraBack: AVCaptureDevice?, cameraFront: AVCaptureDevice?) {
         beginConfiguration()
-        let inputs = self.inputs as! [AVCaptureInput]
+        let inputs = self.inputs
         
         inputs.forEach { (input) in
             if let deviceInput = input as? AVCaptureDeviceInput {
@@ -134,10 +134,8 @@ extension AVCaptureSession {
     /// - Parameter cameraView: camera view
     /// - Returns: AVCaptureVideoPreviewLayer
     func setPreviewLayer(_ cameraView: UIView) -> AVCaptureVideoPreviewLayer? {
-        guard let layer = AVCaptureVideoPreviewLayer(session: self) else {
-            return nil
-        }
-        layer.videoGravity = AVLayerVideoGravityResizeAspectFill
+        let layer = AVCaptureVideoPreviewLayer(session: self)
+        layer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         DispatchQueue.main.async(execute: { () -> Void in
             layer.frame = cameraView.layer.bounds
             cameraView.clipsToBounds = true
@@ -159,8 +157,7 @@ extension AVCaptureSession {
     ///
     /// - Parameter device: AVCaptureDevice
     func removeMicInput(_ device: AVCaptureDevice?) {
-        guard let inputs = self.inputs as? [AVCaptureInput] else { return }
-        
+        let inputs = self.inputs
         for input in inputs {
             if let deviceInput = input as? AVCaptureDeviceInput {
                 if deviceInput.device == device {
@@ -226,18 +223,18 @@ extension AVCaptureDevice {
     ///   - gesture: UITapGestureRecognizer
     func setFocus(_ view: UIView, previewLayer: AVCaptureVideoPreviewLayer, gesture: UITapGestureRecognizer) {
         let touchPoint: CGPoint = gesture.location(in: view)
-        let convertedPoint: CGPoint = previewLayer.captureDevicePointOfInterest(for: touchPoint)
-        if isFocusPointOfInterestSupported && isFocusModeSupported(AVCaptureFocusMode.autoFocus) {
+        let convertedPoint: CGPoint = previewLayer.captureDevicePointConverted(fromLayerPoint: touchPoint)
+        if isFocusPointOfInterestSupported && isFocusModeSupported(AVCaptureDevice.FocusMode.autoFocus) {
             do {
                 try lockForConfiguration()
                 focusPointOfInterest = convertedPoint
-                focusMode = AVCaptureFocusMode.autoFocus
+                focusMode = AVCaptureDevice.FocusMode.autoFocus
                 unlockForConfiguration()
             } catch {
                 print("AACameraView = Unable to focus")
             }
         }
-
+        
     }
 }
 
@@ -314,9 +311,9 @@ extension AACameraView {
     ///
     /// - Parameter completion: response completion
     open func requestAuthorization(_ completion: @escaping (Bool) -> Void) {
-        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo, completionHandler: { (alowedAccess) -> Void in
+        AVCaptureDevice.requestAccess(for: AVMediaType.video, completionHandler: { (alowedAccess) -> Void in
             if self.outputMode == .videoAudio {
-                AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeAudio, completionHandler: { (alowedAccess) -> Void in
+                AVCaptureDevice.requestAccess(for: AVMediaType.audio, completionHandler: { (alowedAccess) -> Void in
                     DispatchQueue.main.sync(execute: { () -> Void in
                         completion(alowedAccess)
                     })
