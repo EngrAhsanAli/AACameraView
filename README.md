@@ -21,7 +21,7 @@
 
 #AACameraView
 
-[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods](https://img.shields.io/cocoapods/v/AACameraView.svg)](http://cocoadocs.org/docsets/AACameraView) [![License MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://travis-ci.org/EngrAhsanAli/AACameraView.svg?branch=master)](https://travis-ci.org/EngrAhsanAli/AACameraView) 
+[![Swift 4.0](https://img.shields.io/badge/Swift-4.0-orange.svg?style=flat)](https://developer.apple.com/swift/) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage) [![CocoaPods](https://img.shields.io/cocoapods/v/AACameraView.svg)](http://cocoadocs.org/docsets/AACameraView) [![License MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat)](https://github.com/Carthage/Carthage) [![Build Status](https://travis-ci.org/EngrAhsanAli/AACameraView.svg?branch=master)](https://travis-ci.org/EngrAhsanAli/AACameraView) 
 ![License MIT](https://img.shields.io/github/license/mashape/apistatus.svg) [![CocoaPods](https://img.shields.io/cocoapods/p/AACameraView.svg)]()
 
 
@@ -76,7 +76,7 @@ target '<Your Target Name>' do
 // Swift 3.2+ Compatibility
 pod 'AACameraView'
 // Swift 4 Compatibility
-pod 'AACameraView', '~> 0.1.1'
+pod 'AACameraView', '~> 1.0'
 end
 
 ```
