@@ -260,7 +260,7 @@ extension AACameraView {
     
     /// Gets recorded duration
     open var recordedDuration: CMTime {
-        return outputVideo?.recordedDuration ?? kCMTimeZero
+        return outputVideo?.recordedDuration ?? CMTime.zero
     }
     
     /// Gets recorded file size

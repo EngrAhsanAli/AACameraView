@@ -9,8 +9,6 @@
 import UIKit
 import AACameraView
 
-
-
 class ViewController: UIViewController {
     
     @IBOutlet weak var cameraView: AACameraView!

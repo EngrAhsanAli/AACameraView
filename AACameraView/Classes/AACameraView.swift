@@ -199,9 +199,7 @@ import AVFoundation
                 
                 guard
                     error == nil,
-                    
                     let data = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(response!),
-                    
                     let image = UIImage(data: data)
                     
                     else {
@@ -274,7 +272,7 @@ extension AACameraView: AVCaptureFileOutputRecordingDelegate {
     ///   - error: Error
     open func capture(_ captureOutput: AVCaptureFileOutput!, didFinishRecordingToOutputFileAt outputFileURL: URL!, fromConnections connections: [Any]!, error: Error!) {
         self.flashMode = .off
-        let response: Any = error == nil ? outputFileURL : error
+        let response: Any = error == nil ? outputFileURL as Any : error as Any
         self.response?(response)
     }
 }
@@ -323,7 +321,7 @@ extension AACameraView {
                 session.addMicInput(global.deviceAudio)
             }
             output = AVCaptureMovieFileOutput()
-            outputVideo!.movieFragmentInterval = kCMTimeInvalid
+            outputVideo!.movieFragmentInterval = CMTime.invalid
         }
         
         session.commitConfiguration()
