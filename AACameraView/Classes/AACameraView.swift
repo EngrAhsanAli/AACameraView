@@ -50,17 +50,13 @@ import AVFoundation
     open var response: ((_ response: Any?) -> ())?
     
     /// Preview layrer for AACameraView
-    var previewLayer: AVCaptureVideoPreviewLayer?
+    open var previewLayer: AVCaptureVideoPreviewLayer?
     
     /// Zoom factor for AACameraView
     var zoomFactor: CGFloat = 1
     
     /// Capture Session for AACameraView
-    var session: AVCaptureSession! {
-        didSet {
-            setSession()
-        }
-    }
+    var session: AVCaptureSession!
     
     /// Current output for capture session
     var output: AVCaptureOutput = AVCaptureStillImageOutput() {
@@ -108,14 +104,7 @@ import AVFoundation
     }
     
     /// Current camera position for AACameraView
-    open var cameraPosition: AVCaptureDevice.Position = .back {
-        didSet {
-            guard cameraPosition != oldValue else {
-                return
-            }
-            setDevice()
-        }
-    }
+    open var cameraPosition: AVCaptureDevice.Position = .back
     
     /// Current flash mode for AACameraView
     open var flashMode: AVCaptureDevice.FlashMode = AVCaptureDevice.FlashMode.auto {
@@ -151,21 +140,22 @@ import AVFoundation
     }
     
     /// Capture session starts/resumes for AACameraView
-    open func startSession() {
+    open func startSession(position: AVCaptureDevice.Position = .back, cameraBack: Bool = true, cameraFront: Bool = true) {
         if let session = self.session {
             if !session.isRunning {
                 session.startRunning()
             }
         } else {
-            setSession()
+            setSession(position: position, cameraBack: cameraBack, cameraFront: cameraFront)
         }
     }
     
     /// Capture session stops for AACameraView
     open func stopSession() {
-        if session.isRunning {
-            session.stopRunning()
+        guard let session = session, session.isRunning else {
+            return
         }
+        session.stopRunning()
     }
     
     /// Start Video Recording for AACameraView
@@ -191,27 +181,80 @@ import AVFoundation
     
     /// Capture image for AACameraView
     open func captureImage() {
-        guard let output = outputImage else { return }
+        guard let output = outputImage, let connection = output.connection(with: .video) else { return }
         
-        global.queue.async(execute: {
-            let connection = output.connection(with: AVMediaType.video)
-            output.captureStillImageAsynchronously(from: connection!, completionHandler: { [unowned self] response, error in
+        output.outputRectConverted(fromMetadataOutputRect: bounds)
+        output.captureStillImageAsynchronously(from: connection, completionHandler: { [unowned self] response, error in
+            
+            guard
+                error == nil,
+                let response = response,
+                let data = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(response),
+                let image = UIImage(data: data)
                 
-                guard
-                    error == nil,
-                    let data = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(response!),
-                    let image = UIImage(data: data)
-                    
-                    else {
-                        self.response?(error)
-                        return
-                }
-                
-                self.response?(image)
-                
-            })
+                else {
+                    self.response?(error)
+                    return
+            }
+            
+            self.response?(image)
+            
         })
+        
     }
+    
+    /// Set camera device for AACameraView
+    open func setDevice(position: AVCaptureDevice.Position, cameraBack: Bool, cameraFront: Bool) {
+        cameraPosition = position
+        
+        var _cameraBack, _cameraFront: AVCaptureDevice?
+        if cameraBack {
+            _cameraBack = global.cameraBack
+        }
+        if cameraFront {
+            _cameraFront = global.cameraFront
+        }
+        if _cameraBack == nil, position == .back {
+            cameraPosition = .front
+        }
+        
+        session.setCameraDevice(cameraPosition, cameraBack: _cameraBack, cameraFront: _cameraFront)
+    }
+    
+    @available(iOS 10.0, *)
+    open func addBuiltIntDevice(position: AVCaptureDevice.Position) {
+        cameraPosition = position
+        guard let device = AVCaptureDevice.default(.builtInWideAngleCamera,
+                                                   for: .video,
+                                                   position: position),
+            let validDevice = device.isValid, !session.inputs.contains(validDevice)
+            else {
+                print("AACameraView:- No camera. but don't all iOS 10 devices have them?")
+                return
+        }
+        
+        session.addInput(validDevice)
+    }
+    
+//    @available(iOS 10.0, *)
+//    open func captureImage(_ width: CGFloat, height: CGFloat) {
+//        let settings = AVCapturePhotoSettings()
+//        let previewPixelType = settings.availablePreviewPhotoPixelFormatTypes.first!
+//        let previewFormat = [
+//            kCVPixelBufferPixelFormatTypeKey as String: previewPixelType,
+//            kCVPixelBufferWidthKey as String: width,
+//            kCVPixelBufferHeightKey as String: height
+//            ] as [String : Any]
+//        settings.previewPhotoFormat = previewFormat
+//
+//        let cameraOutput = AVCapturePhotoOutput()
+//        if (session.canAddOutput(cameraOutput)) {
+//            session.addOutput(cameraOutput)
+//
+//        }
+//        cameraOutput.capturePhoto(with: settings, delegate: self)
+//    }
+    
 }
 
 
@@ -281,20 +324,19 @@ extension AACameraView: AVCaptureFileOutputRecordingDelegate {
 extension AACameraView {
     
     /// Set capture session for AACameraView
-    func setSession() {
-        
-        guard let session = self.session else {
-            if self.global.status == .authorized || self.global.status == .notDetermined {
-                self.session = AVCaptureSession()
-            }
-            return
+    func setSession(position: AVCaptureDevice.Position = .back, cameraBack: Bool = true, cameraFront: Bool = true) {
+        if self.session == nil {
+            self.session = AVCaptureSession()
         }
-        
-        global.queue.async(execute: {
+        let session = self.session!
+        DispatchQueue.main.async {
             session.beginConfiguration()
             session.sessionPreset = AVCaptureSession.Preset.high
             
-            self.setDevice()
+            if cameraBack || cameraFront {
+                self.setDevice(position: position, cameraBack: cameraBack, cameraFront: cameraFront)
+            }
+            
             self.setOutputMode()
             self.previewLayer = session.setPreviewLayer(self)
             session.commitConfiguration()
@@ -305,7 +347,7 @@ extension AACameraView {
             
             session.startRunning()
             
-        })
+        }
     }
     
     /// Set Output mode for AACameraView
@@ -328,11 +370,6 @@ extension AACameraView {
         session.setQuality(quality, mode: outputMode)
     }
     
-    /// Set camera device for AACameraView
-    func setDevice() {
-        session.setCameraDevice(self.cameraPosition, cameraBack: global.cameraBack, cameraFront: global.cameraFront)
-    }
-    
     /// Set Flash mode for AACameraView
     func setFlash() {
         session.setFlashMode(global.devicesVideo, flashMode: flashMode)
@@ -348,6 +385,4 @@ extension AACameraView {
         toggleGestureRecognizer(focusEnabled, gesture: focusGesture)
     }
     
-    
 }
-

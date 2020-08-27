@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
 s.name             = 'AACameraView'
-s.version          = '1.0'
+s.version          = '1.1'
 s.summary          = 'AACameraView is a lightweight, easy-to-use and customizable camera view framework written in Swift.'
 
 s.description      = <<-DESC

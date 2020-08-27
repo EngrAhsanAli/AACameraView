@@ -10,9 +10,7 @@ import AVFoundation
 
 
 class AACameraViewGlobal {
-    
-    let queue = DispatchQueue(label: "AACameraViewSessionQueue", attributes: [])
-    
+        
     let devicesVideo = AVCaptureDevice.devices(for: AVMediaType.video)
     
     let deviceAudio = AVCaptureDevice.default(for: AVMediaType.audio)
@@ -30,7 +28,10 @@ class AACameraViewGlobal {
         guard
             UIImagePickerController.isCameraDeviceAvailable(.rear) ||
                 UIImagePickerController.isCameraDeviceAvailable(.front)
-            else { fatalError("AACameraView - No camera device found") }
+            else {
+                print("AACameraView - No camera device found")
+                return .notDetermined
+        }
         
         return AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
     }()

@@ -76,7 +76,7 @@ target '<Your Target Name>' do
 // Swift 3.2+ Compatibility
 pod 'AACameraView'
 // Swift 4 Compatibility
-pod 'AACameraView', '~> 1.0'
+pod 'AACameraView', '~> 1.1'
 end
 
 ```

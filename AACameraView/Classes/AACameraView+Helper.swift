@@ -56,7 +56,7 @@ extension AVCaptureSession {
     /// - Parameter output: AVCaptureOutput
     func setOutput(_ output: AVCaptureOutput) {
         
-        if canAddOutput(output) {
+        if canAddOutput(output), !outputs.contains(output) {
             beginConfiguration()
             addOutput(output)
             commitConfiguration()
@@ -135,7 +135,8 @@ extension AVCaptureSession {
     /// - Returns: AVCaptureVideoPreviewLayer
     func setPreviewLayer(_ cameraView: UIView) -> AVCaptureVideoPreviewLayer? {
         let layer = AVCaptureVideoPreviewLayer(session: self)
-        layer.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        layer.videoGravity = .resizeAspectFill
+
         DispatchQueue.main.async(execute: { () -> Void in
             layer.frame = cameraView.layer.bounds
             cameraView.clipsToBounds = true
@@ -193,7 +194,7 @@ extension AVCaptureDevice {
     func setZoom(_ factor: CGFloat , gesture: UIPinchGestureRecognizer) -> CGFloat {
         
         var zoom = factor
-        var vZoomFactor = gesture.scale * factor
+        let vZoomFactor = gesture.scale * factor
         if gesture.state == .ended {
             zoom = vZoomFactor >= 1 ? vZoomFactor : 1
         }
@@ -329,6 +330,13 @@ extension AACameraView {
     
 }
 
-
+public extension UIImage {
+    
+    var aa_leftMirrored: UIImage? {
+        guard let cgImage = cgImage else { return nil }
+        return UIImage(cgImage: cgImage, scale: UIScreen.main.scale, orientation: .leftMirrored)
+    }
+    
+}
 
 
