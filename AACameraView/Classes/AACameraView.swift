@@ -288,7 +288,7 @@ extension AACameraView {
 // MARK: - AVCaptureFileOutputRecordingDelegate
 extension AACameraView: AVCaptureFileOutputRecordingDelegate {
     public func fileOutput(_ output: AVCaptureFileOutput, didFinishRecordingTo outputFileURL: URL, from connections: [AVCaptureConnection], error: Error?) {
-        // TODO:- On finish implementation
+        self.response?(outputFileURL)
     }
     
     
