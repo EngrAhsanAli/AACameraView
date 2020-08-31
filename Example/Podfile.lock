@@ -1,16 +1,16 @@
 PODS:
-  - AACameraView (0.1.0)
+  - AACameraView (1.1)
 
 DEPENDENCIES:
   - AACameraView (from `../`)
 
 EXTERNAL SOURCES:
   AACameraView:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  AACameraView: 315308874c9ebaae7caba176c20d139200ba25d4
+  AACameraView: d8559385982e3fe0a76dd71c27ed556098bd73dd
 
-PODFILE CHECKSUM: fb890c632497459b753d10274c2aa60376e8abb0
+PODFILE CHECKSUM: 7b9cef174fda728453503b85226942aa8734061e
 
-COCOAPODS: 1.2.0
+COCOAPODS: 1.10.0.beta.1

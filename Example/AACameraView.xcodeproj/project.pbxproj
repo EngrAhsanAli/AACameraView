@@ -34,7 +34,7 @@
 		902E746372489676E866F30D /* Pods_AACameraView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AACameraView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A88C89D21969EC0E6AD5E75A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		F2D7AA54DB6469EBD6AF652F /* Pods-AACameraView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AACameraView_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-AACameraView_Example/Pods-AACameraView_Example.release.xcconfig"; sourceTree = "<group>"; };
-		F579826AA64824DAE83FC24C /* AACameraView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AACameraView.podspec; path = ../AACameraView.podspec; sourceTree = "<group>"; };
+		F579826AA64824DAE83FC24C /* AACameraView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = AACameraView.podspec; path = ../AACameraView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		FAC4921FE6729574C2665836 /* Pods-AACameraView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AACameraView_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AACameraView_Example/Pods-AACameraView_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -135,7 +135,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				2C6877E74E608BC3DD40A13C /* [CP] Embed Pods Frameworks */,
-				77375EF32FA88E7DD5BCC938 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,28 +201,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AACameraView_Example/Pods-AACameraView_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AACameraView/AACameraView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AACameraView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AACameraView_Example/Pods-AACameraView_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		77375EF32FA88E7DD5BCC938 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AACameraView_Example/Pods-AACameraView_Example-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AACameraView_Example/Pods-AACameraView_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FBF636CDE286CBF30053D581 /* [CP] Check Pods Manifest.lock */ = {
@@ -232,13 +219,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AACameraView_Example-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -329,6 +319,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -376,6 +367,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

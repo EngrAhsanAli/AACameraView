@@ -1,0 +1,7 @@
+version: "Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)"
+options: "a8ddcdf7fe3f1d16f790ec604beb6f91"
+build_time: [1598898963, 513224000]
+inputs:
+  "/Users/ali/Desktop/AACreations/AACameraView/AACameraView/Classes/AACameraView+Global.swift": [9223372036, 854775807]
+  "/Users/ali/Desktop/AACreations/AACameraView/AACameraView/Classes/AACameraView+Helper.swift": [9223372036, 854775807]
+  "/Users/ali/Desktop/AACreations/AACameraView/AACameraView/Classes/AACameraView.swift": [9223372036, 854775807]
